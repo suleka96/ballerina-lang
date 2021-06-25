@@ -36,9 +36,10 @@ function testTupleCyclic() {
 
 type R[int, R[1], v...];
 
-type P XNil|XUnion1|XAny|XListRef;
+type P XNil|XUnion1|XAny;
 const XNil = "nil";
 const XAny = "any";
 type XUnion1 "union"|P;
 
-type S [XNil|S[]|XListRef];
+type R XNil|XAny|XListRef|XFunctionRef;
+
